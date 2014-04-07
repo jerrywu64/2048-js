@@ -9,15 +9,15 @@ function Ai() {
 	
 	function lookahead(grid, depth) {
 		if (depth == 3 || (depth == 2 && grid.availableCells().length > 10)) {
-			var val = 500;
+			var val = 0;
 			var empty = 0;
 			for (var i = 0; i < 4; i++) {
 				for (var j = 0; j < 4; j++) {
-					if (grid.cells[i][j] != null) val += ((i + 1) * (i + 1) + (j + 1)) * grid.cells[i][j].value;
-					else empty++;
+					if (grid.cells[i][j] != null) val += ((i + 1)) * grid.cells[i][j].value;
+					else val += 40;
 				}
 			}
-			return val * (2 - 1.0 / (empty + 1));
+			return val;
 		}
 		var sum = 0;
 		var moves = 0;
