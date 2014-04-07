@@ -17,7 +17,7 @@ function Ai() {
 					else empty++;
 				}
 			}
-			return val * (1 + 1.0 / (empty + 1));
+			return val * (1 - 1.0 / (empty + 1));
 		}
 		var sum = 0;
 		var moves = 0;
