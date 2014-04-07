@@ -8,7 +8,7 @@ function Ai() {
     }
 	
 	function lookahead(grid, depth) {
-		if (depth == 3 || (depth == 2 && grid.availableCells().length > 3)) {
+		if (depth == 3 || (depth == 2 && grid.availableCells().length > 10)) {
 			var val = 4000;
 			var empty = 0;
 			for (var i = 0; i < 4; i++) {
@@ -37,7 +37,7 @@ function Ai() {
 				moves += 9;
 			}
 			//console.log('b');
-			grid.cells[tile.x][tile.y].value = 4;
+			/*grid.cells[tile.x][tile.y].value = 4;
 			//grid.removeTile(tile);
 			//var tile2 = new Tile(cells[i], 4);
 			//grid.insertTile(tile2);
@@ -51,7 +51,7 @@ function Ai() {
 				}
 				sum += best;
 				moves++;
-			}
+			}*/
 			grid.removeTile(tile);
 			//console.log('d');
 		}
