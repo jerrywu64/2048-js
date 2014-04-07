@@ -76,7 +76,7 @@ function Ai() {
         //              Method returns true if you can move to that direction, false otherwise.
 
         // sample AI:
-		var best = 0;
+		var best = -1;
 		var move = 0;
 		for (var i = 0; i < 4; i++)	{
 			var grid2 = grid.copy();
