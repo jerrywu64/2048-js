@@ -76,6 +76,7 @@ function Ai() {
 				move = i;
 			}
 		}		
+		console.log(move);
         return move;
     }
 }
