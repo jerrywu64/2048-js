@@ -26,16 +26,16 @@ function Ai() {
 			//console.log('a');
 			var tile = new Tile(cells[i], 2);
 			grid.insertTile(tile);
+			var best = 0;
 			for (var j = 0; j < 4; j++) {
 				var next = grid.copy();
-				var best = 0;
 				if (next.move(j)) {
 					var value = lookahead(next, depth + 1);
 					if (value > best) best = value;
 				}
-				sum += 9 * best;
-				moves += 9;
 			}
+			sum += 9 * best;
+			moves += 9;
 			//console.log('b');
 			/*grid.cells[tile.x][tile.y].value = 4;
 			//grid.removeTile(tile);
