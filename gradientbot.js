@@ -7,8 +7,13 @@ function Ai() {
         // This method is called when the game is reset.
     }
 	
+	var depth3mod;
+	var depth4mod;
+	var modnum;
+	
 	function lookahead(grid, depth) {
-		if (depth == 3 || (depth == 2 && grid.availableCells().length > 6)) {
+		modnum++;
+		if (depth > 1 + (modnum % depth3mod == 0 || modnum % depth4mod < 2?1:0) + (modnum % depth4mod < 2?1:0)) {
 			var val = 0;
 			var empty = 0;
 			for (var i = 0; i < 4; i++) {
@@ -76,6 +81,10 @@ function Ai() {
         //              Method returns true if you can move to that direction, false otherwise.
 
         // sample AI:
+		var empty_squares = grid.availableCells().length;
+		modnum = 0;
+		depth3mod = empty_squares / 2 + 1;
+		depth4mod = (empty_squares) * (empty_squares);
 		var best = -1;
 		var move = 0;
 		for (var i = 0; i < 4; i++)	{
