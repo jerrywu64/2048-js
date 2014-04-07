@@ -21,7 +21,7 @@ function Ai() {
 		}
 		var sum = 0;
 		var moves = 0;
-		cells = grid.availableCells();
+		var cells = grid.availableCells();
 		for (var i = 0; i < cells.length; i++) {
 			//console.log('a');
 			var tile = new Tile(cells[i], 2);
