@@ -8,7 +8,7 @@ function Ai() {
     }
 	
 	function lookahead(grid, depth) {
-		if (depth == 3) {
+		if (depth == 2) {
 			var val = 100;
 			var empty = 0;
 			for (var i = 0; i < 4; i++) {
@@ -28,10 +28,13 @@ function Ai() {
 			grid.insertTile(tile);
 			for (var j = 0; j < 4; j++) {
 				var next = grid.copy();
+				var best = 0;
 				if (next.move(j)) {
-					sum += 9 * lookahead(next, depth + 1);
-					moves += 9;
+					var value = lookahead(next, depth + 1);
+					if (value > best) best = value;
 				}
+				sum += 9 * best;
+				moves += 9;
 			}
 			//console.log('b');
 			grid.cells[tile.x][tile.y].value = 4;
@@ -41,10 +44,13 @@ function Ai() {
 			//console.log('c');
 			for (var j = 0; j < 4; j++) {
 				var next = grid.copy();
+				var best = 0;
 				if (next.move(j)) {
-					sum += lookahead(next, depth + 1);
-					moves++;
+					var value = lookahead(next, depth + 1);
+					if (value > best) best = value;
 				}
+				sum += best;
+				moves++;
 			}
 			grid.removeTile(tile);
 			//console.log('d');
