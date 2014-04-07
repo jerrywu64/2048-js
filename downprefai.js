@@ -35,7 +35,7 @@ function Ai() {
 			}
 			//console.log('b');
 			grid.removeTile(tile);
-			tile = new Tile(cells[i], 4);
+			//tile = new Tile(cells[i], 4);
 			grid.insertTile(tile);
 			//console.log('c');
 			for (var j = 0; j < 4; j++) {
