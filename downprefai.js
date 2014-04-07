@@ -8,7 +8,7 @@ function Ai() {
     }
 	
 	function lookahead(grid, depth) {
-		if (depth == 3 || (depth == 2 && grid.availableCells().length > 8)) {
+		if (depth == 3 || (depth == 2 && grid.availableCells().length > 3)) {
 			var val = 1200;
 			var empty = 0;
 			for (var i = 0; i < 4; i++) {
@@ -17,7 +17,7 @@ function Ai() {
 					else empty++;
 				}
 			}
-			return val * (1 - 1.0 / (empty + 1));
+			return val * (2 - 1.0 / (empty + 1));
 		}
 		var sum = 0;
 		var moves = 0;
