@@ -35,8 +35,8 @@ function Ai() {
 			}
 			//console.log('b');
 			grid.removeTile(tile);
-			//tile = new Tile(cells[i], 4);
-			grid.insertTile(tile);
+			var tile2 = new Tile(cells[i], 4);
+			grid.insertTile(tile2);
 			//console.log('c');
 			for (var j = 0; j < 4; j++) {
 				var next = grid.copy();
@@ -45,7 +45,7 @@ function Ai() {
 					moves++;
 				}
 			}
-			grid.removeTile(tile);
+			grid.removeTile(tile2);
 			//console.log('d');
 		}
 		return 1.0 * sum / moves;
