@@ -83,8 +83,8 @@ function Ai() {
         // sample AI:
 		var empty_squares = grid.availableCells().length;
 		modnum = 0;
-		depth3mod = empty_squares / 2 + 1;
-		depth4mod = (empty_squares) * (empty_squares);
+		depth3mod = 3 * empty_squares / 2 + 1;
+		depth4mod = 3 * (empty_squares) * (empty_squares);
 		var best = -1;
 		var move = 0;
 		for (var i = 0; i < 4; i++)	{
