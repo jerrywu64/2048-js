@@ -8,7 +8,7 @@ function Ai() {
     }
 	
 	function lookahead(grid, depth) {
-		if (depth == 3 || (depth == 2 && grid.availableCells().length > 10)) {
+		if (depth == 3 || (depth == 2 && grid.availableCells().length > 6)) {
 			var val = 0;
 			var empty = 0;
 			for (var i = 0; i < 4; i++) {
