@@ -19,7 +19,7 @@ function Ai() {
 			for (var i = 0; i < 4; i++) {
 				for (var j = 0; j < 4; j++) {
 					if (grid.cells[i][j] != null) val += (2 * i + j) * grid.cells[i][j].value;
-					else val += 250;
+					else val += 60;
 				}
 			}
 			return val;
