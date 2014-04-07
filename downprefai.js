@@ -13,7 +13,7 @@ function Ai() {
 			var empty = 0;
 			for (var i = 0; i < 4; i++) {
 				for (var j = 0; j < 4; j++) {
-					if (grid.cells[i][j] != null) val += (i + 1) * grid.cells[i][j].value();
+					if (grid.cells[i][j] != null) val += (i + 1) * grid.cells[i][j].value;
 					else empty++;
 				}
 			}
