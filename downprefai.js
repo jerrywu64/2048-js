@@ -68,7 +68,9 @@ function Ai() {
 		var best = 0;
 		var move = 0;
 		for (var i = 0; i < 4; i++)	{
-			var val = lookahead(grid.copy().move(i), 1);
+			var grid2 = grid.copy();
+			if (!grid2.move(i)) continue;
+			var val = lookahead(grid2, 1);
 			if (val > best) {
 				best = val;
 				move = i;
