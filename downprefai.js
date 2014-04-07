@@ -7,7 +7,7 @@ function Ai() {
         // This method is called when the game is reset.
     }
 	
-	this.lookahead = function(grid, depth) {
+	function lookahead(grid, depth) {
 		if (depth == 3) {
 			var val = 100;
 			var empty = 0;
