@@ -9,7 +9,7 @@ function Ai() {
 	
 	function lookahead(grid, depth) {
 		if (depth == 2) {
-			var val = 100;
+			var val = 600;
 			var empty = 0;
 			for (var i = 0; i < 4; i++) {
 				for (var j = 0; j < 4; j++) {
