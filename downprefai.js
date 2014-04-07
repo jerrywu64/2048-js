@@ -23,6 +23,7 @@ function Ai() {
 		var moves = 0;
 		cells = grid.availableCells();
 		for (var i = 0; i < cells.length; i++) {
+			console.log('a');
 			var tile = new Tile(cells[i], 2);
 			grid.insertTile(tile);
 			for (var j = 0; j < 4; j++) {
@@ -32,9 +33,11 @@ function Ai() {
 					moves += 9;
 				}
 			}
+			console.log('b');
 			grid.removeTile(tile);
 			tile = new Tile(cells[i], 4);
 			grid.insertTile(tile);
+			console.log('c');
 			for (var j = 0; j < 4; j++) {
 				var next = grid.copy();
 				if (next.move(j)) {
@@ -43,6 +46,7 @@ function Ai() {
 				}
 			}
 			grid.removeTile(tile);
+			console.log('d');
 		}
 		return 1.0 * sum / moves;
 	}
@@ -76,7 +80,7 @@ function Ai() {
 				move = i;
 			}
 		}		
-		console.log(move);
+		//console.log(move);
         return move;
     }
 }
